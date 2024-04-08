@@ -7,20 +7,38 @@ import Spin from "../animations/Spin"
 import Squares from "../animations/Squares"
 import Swing from "../animations/Swing"
 import Wiggle from "../animations/Wiggle"
+import BuyButton from "../components/BuyButton"
+import animationArray from "../data"
 import "./Home.css"
 
 function Home() {
   return (
     <>
-      <Morph />
-      <Spin />
+      {
+        animationArray.map(animation => {
+          return <div className="animationContainer">
+            {animation}
+            <BuyButton />
+          </div>
+        })
+      }
+
+
+      
+
+      <div className="animationContainer">
+        <Morph />
+        <BuyButton />
+      </div>
+      
+      {/* <Spin />
       <Wiggle />
       <Lotus />
       <Flip />
       <Bounce />
       <Orbit />
       <Squares />
-      <Swing />
+      <Swing /> */}
     </>
   )
 }

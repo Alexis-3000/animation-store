@@ -13,8 +13,10 @@
 
 :root {
     font-size: 62.5%;
-    --primary-color: #651FFF;
-    --secondary-color: #00BCD4;
+    /* --primary-color: #ff881f;
+    --secondary-color: #ffea00; */
+    --primary-color: #ff1f62;
+    --secondary-color: #00ffe1;
 }  
 
 body {
@@ -46,6 +48,11 @@ button {
     padding: 0.5rem 2rem;
     border: 1px solid #000;
     border-radius: 2rem;
+}
+
+button:hover {
+    color: #fff;
+    background-color: #000;
 }
 
 /* Navigation --------------------- */

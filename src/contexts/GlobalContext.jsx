@@ -4,7 +4,7 @@ export const GlobalContext = createContext();
 
 const initialState = {
     screenWidth: window.innerWidth,
-    showMore: { teaching: false, awards: false},
+    showMore: { teaching: false, awards: false}, /* do i need this part? */
 }
 
 function reducer (state, action) {
@@ -15,6 +15,7 @@ function reducer (state, action) {
                 screenWidth: window.innerWidth,
             }
         }
+        /* do i need this part? */
         case "toggleShowTeachingInfo": {
             return {
                 ...state, 
@@ -24,6 +25,7 @@ function reducer (state, action) {
                 } 
             }
         }
+        /* do i need this part? */
         case "toggleShowAwardsInfo": {
             return {
                 ...state, 
