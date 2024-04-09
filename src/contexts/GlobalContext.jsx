@@ -1,10 +1,12 @@
 import { createContext, useReducer } from "react";
+import animationArray from "../data";
 
 export const GlobalContext = createContext();
 
 const initialState = {
     screenWidth: window.innerWidth,
-    showMore: { teaching: false, awards: false}, /* do i need this part? */
+    items: animationArray,
+    shoppingCart: [],
 }
 
 function reducer (state, action) {
@@ -15,26 +17,14 @@ function reducer (state, action) {
                 screenWidth: window.innerWidth,
             }
         }
-        /* do i need this part? */
-        case "toggleShowTeachingInfo": {
+        case "addToCart": {
+            /* write addToCart function! */
             return {
                 ...state, 
-                showMore: {
-                    ...state.showMore, 
-                    teaching: !state.showMore.teaching,
-                } 
+                shoppingCart: [...state.shoppingCart, action.payload /* what to add? how to get the id? */]
             }
         }
-        /* do i need this part? */
-        case "toggleShowAwardsInfo": {
-            return {
-                ...state, 
-                showMore: {
-                    ...state.showMore,
-                    awards: !state.showMore.awards,
-                }
-            }
-        }
+
     }
 }
 

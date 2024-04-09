@@ -1,44 +1,22 @@
-import Bounce from "../animations/Bounce"
-import Flip from "../animations/Flip"
-import Lotus from "../animations/Lotus"
-import Morph from "../animations/Morph"
-import Orbit from "../animations/Orbit"
-import Spin from "../animations/Spin"
-import Squares from "../animations/Squares"
-import Swing from "../animations/Swing"
-import Wiggle from "../animations/Wiggle"
+import { useContext } from "react";
+import { GlobalContext } from "../contexts/GlobalContext";
 import BuyButton from "../components/BuyButton"
-import animationArray from "../data"
 import "./Home.css"
 
+
 function Home() {
+  const { state, dispatch } = useContext(GlobalContext)
+
   return (
     <>
       {
-        animationArray.map(animation => {
-          return <div className="animationContainer">
-            {animation}
-            <BuyButton />
+        state.items.map((animation, index) =>
+          <div className="animationContainer" key={index}>
+            {animation.animation}
+            <BuyButton id={animation.id}/>
           </div>
-        })
+        )
       }
-
-
-      
-
-      <div className="animationContainer">
-        <Morph />
-        <BuyButton />
-      </div>
-      
-      {/* <Spin />
-      <Wiggle />
-      <Lotus />
-      <Flip />
-      <Bounce />
-      <Orbit />
-      <Squares />
-      <Swing /> */}
     </>
   )
 }
