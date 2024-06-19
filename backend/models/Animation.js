@@ -6,7 +6,7 @@ const animationSchema = new Schema({
         type: Number,
         required: true
     },
-    path: {
+    type: {
         type: String,
         required: true
     },

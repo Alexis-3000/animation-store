@@ -11,6 +11,7 @@ import { GlobalContext } from "./contexts/GlobalContext";
 function App() {
   const { state, dispatch } = useContext(GlobalContext);
 
+  /* useEffect for responsive screensizing */
   useEffect(() => {
     function handleResize() {
       dispatch({ type: "setScreenWidth"})
